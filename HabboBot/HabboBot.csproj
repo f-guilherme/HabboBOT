@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EE381F34-AC15-4319-B415-F93AAB38E8B3}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>HabboBot</RootNamespace>
+    <AssemblyName>HabboBot</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FiddlerCore4, Version=4.6.2.0, Culture=neutral, PublicKeyToken=67cb91587178ac5a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>HabboBot.Proxy\FiddlerCore4.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="HabboBot.Connection\HConnection.cs" />
+    <Compile Include="HabboBot.Connection\HHeaders.cs" />
+    <Compile Include="HabboBot.Connection\HId.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ABCFile.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AS3Item.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASClass.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASConstantPool.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASContainer.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASException.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASInstance.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASItemInfo.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASMetadata.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASMethod.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASMethodBody.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASMultiname.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASNamespace.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASNamespaceSet.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASParameter.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASScript.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ASTrait.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\ASCode.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\ASMachine.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ApplyTypeIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\AddIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\AddIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\Computation.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\DecrementIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\DecrementIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\DivideIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\EqualsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\GreaterEqualsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\GreaterThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\IncrementIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\IncrementIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\InIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\IsTypeLateIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\LessEqualsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\LessThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\ModuloIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\MultiplyIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\MultiplyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\NegateIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\NegateIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\StrictEqualsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\SubtractIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Arithmetic\SubtractIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ASInstruction.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\AsTypeIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\AsTypeLateIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\BitAndIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\BitNotIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\BitOrIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\BitXorIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\LShiftIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\RShiftIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Bit Manipulation\URShiftIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallMethodIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallPropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallPropLexIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallPropVoidIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallStaticIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallSuperIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CallSuperVoidIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\CheckFilterIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ConstructIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ConstructPropIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ConstructSuperIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Containers\IPropertyContainer.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfFalseIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfGreaterEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfGreaterThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfLessEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfLessThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfNotEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfNotGreaterEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfNotGreaterThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfNotLessEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfNotLessThanIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfStrictEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfStrictNotEqualIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\IfTrueIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\Jumper.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Control Transfer\JumpIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DebugFileIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DebugIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DebugLineIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DeletePropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DupIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DxnsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\DxnsLateIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Enums\OPCode.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\EscXAttrIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\EscXElemIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\FindPropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\FindPropStrictIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetDescendantsIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetGlobalScopeIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetLexIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetPropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetScopeObjectIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetSlotIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\GetSuperIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\HasNext2Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\HasNextIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\InitPropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\InstanceOfIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\LabelIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\LookUpSwitchIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewActivationIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewArrayIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewCatchIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewClassIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewFunctionIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NewObjectIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NextNameIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NextValueIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NopIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\NotIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\PopIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\PopScopeIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\PushScopeIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\PushUndefinedIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\PushWithIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\DecLocalIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\DecLocalIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\GetLocal0Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\GetLocal1Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\GetLocal2Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\GetLocal3Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\GetLocalIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\IncLocalIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\IncLocalIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\KillIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\Local.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\SetLocal0Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\SetLocal1Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\SetLocal2Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\SetLocal3Ins.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Register Management\SetLocalIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ReturnValueIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ReturnVoidIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\SetPropertyIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\SetSlotIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\SetSuperIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\Primitive.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushByteIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushDoubleIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushFalseIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushIntIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushNaNIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushNullIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushShortIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushStringIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushTrueIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Stack Management\PushUIntIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\SwapIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\ThrowIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\CoerceAIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\CoerceIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\CoerceSIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertBIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertDIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertIIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertOIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertSIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\Type Conversion\ConvertUIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\AVM2\Instructions\TypeOfIns.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\ConstantItem.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\ClassFlags.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\ConstantKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\MethodFlags.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\MultinameKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\NamespaceKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\TraitAttributes.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Enums\TraitKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Multinames\IMultiname.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Multinames\IMultinameL.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Multinames\IQName.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Multinames\IRTQName.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Traits\IClassTrait.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Traits\IFunctionTrait.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Traits\IMethodGSTrait.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ABC\Traits\ISlotConstantTrait.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\CompressionKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Crc\CRC32.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\Deflate.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\DeflateStream.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\GZipStream.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\Inflate.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\InfTree.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\ParallelDeflateOutputStream.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\Tree.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\Zlib.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\ZlibBaseStream.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\ZlibCodec.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\ZlibConstants.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\Ionic\Zlib\ZlibStream.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\LZMA.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Common\CRC.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZMA\LzmaBase.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZMA\LzmaDecoder.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZMA\LzmaEncoder.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZ\IMatchFinder.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZ\LzBinTree.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZ\LzInWindow.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\LZ\LzOutWindow.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\RangeCoder\RangeCoder.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\RangeCoder\RangeCoderBit.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\Compress\RangeCoder\RangeCoderBitTree.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\SevenZip\ICoder.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Compression\ZLIB.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\FlashItem.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Internals\FlashTools.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\IO\FlashReader.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\IO\FlashWriter.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Properties\AssemblyInfo.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Records\FrameRecord.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Records\HeaderRecord.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Records\RectangeRecord.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\ShockwaveFlash.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\DefineBinaryDataTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\DefineBitsJPEG3.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\DefineFontNameTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\DefineSoundTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\DoABCTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\EndTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\Enums\FlashEdition.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\Enums\FlashProduct.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\Enums\ImageFormat.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\Enums\TagKind.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\ExportAssetsTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\FileAttributesTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\FrameLabelTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\ImageTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\MetadataTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\ProductInfoTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\ScriptLimitsTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\SetBackgroundColorTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\ShowFrameTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\SymbolClassTag.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\TagItem.cs" />
+    <Compile Include="HabboBot.Libraries\Flazzy\Tags\UnknownTag.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Communication\Event Args\DataInterceptedEventArgs.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Communication\HNode.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Communication\HotelEndPoint.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Communication\HTriggers.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Communication\IHConnection.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Crypto\HKeyExchange.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Crypto\PKCSPadding.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Crypto\RC4.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HAction.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HBan.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HDance.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HDirection.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HGender.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HGesture.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HHotel.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HModel.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HProductType.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HRelationship.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HRoomFlags.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HSign.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HSize.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HStance.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Enums\HTheme.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HCatalogOffer.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HCatalogPage.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HCatalogProduct.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HData.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HEntity.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HEntityUpdate.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HExtensions.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HFloorItem.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HFriendData.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HFurniture.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HGame.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HGroupEntry.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HItem.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HMap.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HPoint.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HRoomEntry.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HSearchResult.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HUserProfile.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\HWallItem.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Messages\HashResolvingException.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Messages\Identifiers.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Messages\Incoming.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Habbo\Messages\Outgoing.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Properties\AssemblyInfo.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Protocol\BigEndian.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Protocol\Enums\HDestination.cs" />
+    <Compile Include="HabboBot.Libraries\Sulakore\Protocol\HMessage.cs" />
+    <Compile Include="HabboBot.Proxy\Proxy.cs" />
+    <Compile Include="CLILogger.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="HabboBot.Libraries\Flazzy\Flazzy.csproj" />
+    <None Include="HabboBot.Libraries\Sulakore\Sulakore.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HabboBot.Libraries\FiddlerCore4.dll" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
