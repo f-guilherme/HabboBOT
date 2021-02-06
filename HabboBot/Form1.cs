@@ -147,7 +147,7 @@ namespace HabboBot
         }
         #endregion
         #region botCount
-        public void BotCount(int _botCount)
+        public static void BotCount(int _botCount)
         {
             labelBotCount.Text = _botCount.ToString();
         }
