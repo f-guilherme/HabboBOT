@@ -1,36 +1,47 @@
 ﻿using Fiddler;
 
 using HabboBot.Connection;
+using System.Text;
 
 namespace HabboBot
 {
-    public static class Proxy
+    public class Proxy
     {
-        public static void Start()
+        Form1 form;
+        public Proxy(Form1 form)
         {
+            this.form = form;
+        }
+        public void Start()
+        {
+            form.LogBox("Interceptando conexão...");
             FiddlerApplication.AfterSessionComplete += FiddlerApplication_AfterSessionComplete;
             FiddlerApplication.Startup(9090, true, true, true);
         }
 
-        public static void Stop()
+        public void Stop()
         {
+            form.LogBox("Interrompendo interceptação de conexão.");
             FiddlerApplication.AfterSessionComplete -= FiddlerApplication_AfterSessionComplete;
             if (!FiddlerApplication.IsStarted())
                 return;
             FiddlerApplication.Shutdown();
         }
 
-        private static void FiddlerApplication_AfterSessionComplete(Session sess)
+        private void FiddlerApplication_AfterSessionComplete(Session sess)
         {
             try
             {
+                Encoding encoding = sess.GetResponseBodyEncoding();
+                form.LogBox(encoding.EncodingName);
+                form.LogBox(sess.GetResponseBodyAsString());
                 if (sess.GetResponseBodyAsString().Contains("clienturl"))
                 {
                     string sso = sess.GetResponseBodyAsString().Split('"')[3].Split('/')[5];
-                    HConnection connection = new HConnection(sso);
+                    HConnection connection = new HConnection(sso, form);
+                    form.LogBox("Interceptando conta...");
                     connection.Start();
-
-                    Program.connections.Add(connection);
+                    Form1.connections.Add(connection);
                 }
             }
             catch { }
