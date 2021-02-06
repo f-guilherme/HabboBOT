@@ -1,5 +1,5 @@
 ﻿using System;
-
+//
 namespace HabboBot
 {
     public static class CLILogger
